@@ -2,6 +2,15 @@
     "name": "advancelearn/otp-auth",
     "license": "MIT",
     "description": "otp generate for one field from client and after create otp you can checked is true token",
+    "keywords": [
+        "otp-auth",
+        "advancelearn",
+        "laravel",
+        "framework",
+        "Auth",
+        "laravel package",
+        "laravel Auth"
+    ],
     "autoload": {
         "psr-4": {
             "Advancelearn\\OtpAuth\\": "src/"
