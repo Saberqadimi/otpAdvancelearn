@@ -1,0 +1,37 @@
+{
+    "name": "advancelearn/otp-auth",
+    "license": "MIT",
+    "description": "otp generate for one field from client and after create otp you can checked is true token",
+    "autoload": {
+        "psr-4": {
+            "Advancelearn\\OtpAuth\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "saberqadimi",
+            "email": "qadimi43@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0.2",
+        "guzzlehttp/guzzle": "^7.2",
+        "laravel/framework": "^9.19"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/advancelearn/otpAuth",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "advancelearn\\otpAuth\\OtpAuthServiceProvider"
+            ]
+        }
+    }
+}
