@@ -30,7 +30,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "advancelearn\\otpAuth\\src\\OtpAuthServiceProvider"
+                "Advancelearn\\OtpAuth\\Provider\\OtpAuthServiceProvider"
             ]
         }
     }

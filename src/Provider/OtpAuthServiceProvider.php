@@ -1,5 +1,5 @@
 <?php
-namespace Advancelearn\OtpAuth;
+namespace Advancelearn\OtpAuth\Provider;
 use Illuminate\Support\ServiceProvider;
 
 class OtpAuthServiceProvider extends ServiceProvider
