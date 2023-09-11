@@ -11,7 +11,10 @@ class OtpHandlerAdvancelearn
     {
         $userName = $this->checkUserNameField($data);
         $fieldName = isset($userName['email']) ? 'email' : 'mobile';
-        return $this->tokenHandler($userName[$fieldName] , $data['time']);
+        return [
+            "token" => $this->tokenHandler($userName[$fieldName] , $data['time']),
+            "column" => $fieldName
+        ];
     }
 
     /**
@@ -29,7 +32,7 @@ class OtpHandlerAdvancelearn
         return json_decode($code_random, FALSE);
     }
 
-    public function verify($data): \Illuminate\Http\JsonResponse
+    public function verify($data): array
     {
         $userName = $this->checkUserNameField($data);
         $fieldName = isset($userName['email']) ? 'email' : 'mobile';
@@ -37,9 +40,9 @@ class OtpHandlerAdvancelearn
         $cachedOtp = Cache::get('otp_' . $cacheKey);
         if ($cachedOtp == $data['token']) {
             Cache::forget('otp_' . $cacheKey);
-            return response()->json(['success' => 'Token is verified you can register or logged in user', 'status' => true]);
+            return ['success' => 'Token is verified you can register or logged in user', 'status' => true];
         } else {
-            return response()->json(['error' => 'Token is not matched', 'status' => false]);
+            return ['error' => 'Token is not matched', 'status' => false];
         }
     }
 
